@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 const SectionTitle = ({ children, cornerLink }) => {
   return (
     <Wrapper>
       <Title>{children}</Title>
       {cornerLink && (
-        <CornerLink href={cornerLink.href}>
-          {cornerLink.content}
-        </CornerLink>
+        <CornerLink href={cornerLink.href}>{cornerLink.content}</CornerLink>
       )}
     </Wrapper>
   );
@@ -26,6 +24,7 @@ const Title = styled.h2`
   font-weight: var(--font-weight-bold);
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  line-height: 1rem;
 `;
 
 const CornerLink = styled.a`
