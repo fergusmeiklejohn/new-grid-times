@@ -1,30 +1,24 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
 
 // HACK: Normally, we'd receive a prop like `priceData` and
 // draw the graph based on that data. Because our graphs are
 // pre-generated SVGs, though, we're cheating and mapping each
 // graph to a specific stock.
 const STOCK_GRAPHS_BY_TICKER_SYMBOL = {
-  AAPL: '/images/stock-graph-up-1.svg',
-  AMC: '/images/stock-graph-up-2.svg',
-  ENB: '/images/stock-graph-down-1.svg',
-  GOOG: '/images/stock-graph-up-3.svg',
-  AMZN: '/images/stock-graph-down-2.svg',
-  MSFT: '/images/stock-graph-down-3.svg',
+  AAPL: "/images/stock-graph-up-1.svg",
+  AMC: "/images/stock-graph-up-2.svg",
+  ENB: "/images/stock-graph-down-1.svg",
+  GOOG: "/images/stock-graph-up-3.svg",
+  AMZN: "/images/stock-graph-down-2.svg",
+  MSFT: "/images/stock-graph-down-3.svg",
 };
 
-const MarketCard = ({
-  tickerSymbol,
-  exchangeName,
-  percentChange,
-}) => {
+const MarketCard = ({ tickerSymbol, exchangeName, percentChange }) => {
   const graphSrc = STOCK_GRAPHS_BY_TICKER_SYMBOL[tickerSymbol];
-  const percentageSymbol = percentChange >= 0 ? '+' : '';
+  const percentageSymbol = percentChange >= 0 ? "+" : "";
   const percentageColor =
-    percentChange >= 0
-      ? 'var(--color-secondary)'
-      : 'var(--color-urgent)';
+    percentChange >= 0 ? "var(--color-secondary)" : "var(--color-urgent)";
 
   return (
     <Wrapper>
@@ -36,7 +30,7 @@ const MarketCard = ({
       </Row>
       <Row>
         <Exchange>{exchangeName}</Exchange>
-        <Percentage style={{ '--color': percentageColor }}>
+        <Percentage style={{ "--color": percentageColor }}>
           {percentageSymbol}
           {percentChange}%
         </Percentage>
